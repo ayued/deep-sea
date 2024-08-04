@@ -2,14 +2,6 @@ let particles = [];
 let noiseScale = 0.01;
 
 function setup() {
-  let viewport = document.querySelector('meta[name=viewport]');
-  if (!viewport) {
-    viewport = document.createElement('meta');
-    viewport.name = 'viewport';
-    document.head.appendChild(viewport);
-  }
-  viewport.setAttribute('content', 'width=device-width, initial-scale=1.0');
-
   createCanvas(windowWidth, windowHeight);
   colorMode(HSB, 360, 100, 100, 100);
   background(0);
@@ -42,8 +34,8 @@ class Particle {
     this.pos = createVector(x, y);
     this.vel = p5.Vector.random2D().mult(random(0.5, 2));
     this.acc = createVector(0, 0);
-    this.life = 400;
-    this.maxLife = 300;
+    this.life = 300;
+    this.maxLife = this.life;
     this.hue = random(200, 260); // 青系の色相範囲
     this.saturation = random(60, 100);
     this.brightness = random(0, 100);
@@ -79,5 +71,5 @@ class Particle {
 
 function windowResized() {
   resizeCanvas(windowWidth, windowHeight);
-  background(220, 50, 15);
+  background(0);
 }
