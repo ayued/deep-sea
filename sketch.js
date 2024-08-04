@@ -47,7 +47,7 @@ class Particle {
     this.hue = random(200, 260); // 青系の色相範囲
     this.saturation = random(60, 100);
     this.brightness = random(0, 100);
-    this.size = random(0.5, 2.5) * min(windowWidth, windowHeight) / 1000;
+    this.size = random(0.5, 2.3) * min(windowWidth, windowHeight) / 1000;
   }
   
   update() {
